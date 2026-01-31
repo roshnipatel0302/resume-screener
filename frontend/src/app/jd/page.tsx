@@ -35,7 +35,7 @@ const JDPage = () => {
 
     const fetchJobs = async () => {
         try {
-            const response = await api.get('/jobs');
+            const response = await api.get('jobs');
             setJobs(response.data);
         } catch (error) {
             console.error('Failed to fetch jobs:', error);
@@ -52,11 +52,11 @@ const JDPage = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
-            await api.post('/jobs', {
+            await api.post('jobs', {
                 ...formData,
                 skills: formData.skills.split(',').map(s => s.trim())
             });
-            toast.success("Job Description Created Successfully! 🚀");
+            toast.success('Job Description added!');
             setIsModalOpen(false);
             setFormData({
                 title: '',
@@ -74,10 +74,9 @@ const JDPage = () => {
     };
 
     const handleDelete = async (id: string) => {
-        if (!confirm('Are you sure you want to delete this JD?')) return;
         try {
-            await api.delete(`/jobs/${id}`);
-            toast.success("Job deleted");
+            await api.delete(`jobs/${id}`);
+            toast.success('Job deleted');
             fetchJobs();
         } catch (error) {
             toast.error("Failed to delete job");

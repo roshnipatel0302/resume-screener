@@ -13,7 +13,7 @@ const ShortlistedPage = () => {
 
     const fetchShortlisted = async () => {
         try {
-            const response = await api.get('/resumes');
+            const response = await api.get('resumes');
             // Show both pending shortlist and already scheduled
             setCandidates(response.data.filter((r: any) =>
                 r.status === 'Shortlisted' || r.status === 'Interview Scheduled'
@@ -51,7 +51,7 @@ const ShortlistedPage = () => {
         setCandidates(updatedCandidates);
 
         try {
-            await api.patch(`/resumes/${confirmingId}/status`, { status: 'Interview Scheduled' });
+            await api.patch(`resumes/${confirmingId}/status`, { status: 'Interview Scheduled' });
             toast.success(`Candidate marked as Scheduled`);
         } catch (e) {
             console.error(e);
@@ -236,7 +236,7 @@ const ShortlistedPage = () => {
                                 <div className="absolute top-6 right-6 z-10">
                                     <div className="bg-white/90 backdrop-blur-sm p-1.5 pl-2 rounded-xl flex items-center gap-1.5 shadow-sm border border-slate-100/50">
                                         <span className={`text-xl font-black ${candidate.score >= 80 ? 'text-emerald-500' :
-                                                candidate.score >= 60 ? 'text-indigo-500' : 'text-amber-500'
+                                            candidate.score >= 60 ? 'text-indigo-500' : 'text-amber-500'
                                             }`}>{candidate.score}</span>
                                         <div className="flex flex-col">
                                             <span className="text-[7px] font-black uppercase text-slate-400 leading-none">Match</span>

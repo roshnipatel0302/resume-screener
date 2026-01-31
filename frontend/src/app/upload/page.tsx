@@ -49,7 +49,7 @@ const UploadPage = () => {
         formData.append('jobDescription', JSON.stringify(jobDescription));
 
         try {
-            await api.post('/resumes/upload', formData, {
+            await api.post('resumes/upload', formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
                 onUploadProgress: (progressEvent) => {
                     const percentCompleted = Math.round((progressEvent.loaded * 100) / (progressEvent.total || 100));

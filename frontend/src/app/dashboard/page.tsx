@@ -46,7 +46,7 @@ const DashboardPage = () => {
 
     const fetchResumes = async () => {
         try {
-            const response = await api.get('/resumes');
+            const response = await api.get('resumes');
             setResumes(response.data);
         } catch (error) {
             console.error('Error fetching resumes:', error);
@@ -94,7 +94,7 @@ const DashboardPage = () => {
 
     const handleStatusUpdate = async (id: string, newStatus: string) => {
         try {
-            await api.patch(`/resumes/${id}/status`, { status: newStatus });
+            await api.patch(`resumes/${id}/status`, { status: newStatus });
             toast.success(`Status updated to ${newStatus}`);
             fetchResumes();
         } catch (error) {
@@ -105,7 +105,7 @@ const DashboardPage = () => {
 
     const deleteResume = async (id: string, toastId: string) => {
         try {
-            await api.delete(`/resumes/${id}`);
+            await api.delete(`resumes/${id}`);
             toast.dismiss(toastId);
             toast.success('Candidate profile removed');
             fetchResumes();

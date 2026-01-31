@@ -16,7 +16,7 @@ const InterviewsPage = () => {
 
     const fetchScheduled = async () => {
         try {
-            const response = await api.get('/resumes');
+            const response = await api.get('resumes');
             // Filter ONLY 'Interview Scheduled'
             setCandidates(response.data.filter((r: any) =>
                 r.status === 'Interview Scheduled'
@@ -80,9 +80,9 @@ const InterviewsPage = () => {
             // Let's try patching to /resumes/:id which usually updates fields.
 
             // Actually, looking at previous code, let's check resumeRoutes if I can.
-            // But to be safe, I'll send a PATCH to /resumes/:id with the new data.
+            // But to             // Let's try patching to /resumes/:id which usually updates fields.
 
-            await api.patch(`/resumes/${selectedCandidate._id}`, {
+            await api.patch(`resumes/${selectedCandidate._id}`, {
                 interviewDate: scheduledDate,
                 // We could also generate a meeting link here if empty
                 meetingLink: selectedCandidate.meetingLink || `https://meet.google.com/${Math.random().toString(36).substring(7)}`
