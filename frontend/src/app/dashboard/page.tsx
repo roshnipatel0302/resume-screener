@@ -50,7 +50,7 @@ const DashboardPage = () => {
             setResumes(response.data);
         } catch (error) {
             console.error('Error fetching resumes:', error);
-            toast.error("Failed to load data");
+            toast.error("Failed to load data...");
         } finally {
             setLoading(false);
         }
