@@ -1,0 +1,18 @@
+John Doe
+Senior Software Engineer
+Email: john.doe@example.com
+Phone: 1234567890
+
+Summary:
+Experienced Full Stack Developer with 8 years of experience in building scalable web applications. Expert in React, Node.js, and Cloud infrastructures.
+
+Skills:
+React, Node.js, TypeScript, Next.js, MongoDB, AWS, Docker, Git, Tailwind CSS
+
+Experience:
+- Senior Developer at TechCorp (2018 - Present): 6 years
+- Full Stack Developer at WebSolutions (2016-2018): 2 years
+Total Experience: 8 years
+
+Education:
+Master of Technology (M.Tech) in Computer Science from Global University

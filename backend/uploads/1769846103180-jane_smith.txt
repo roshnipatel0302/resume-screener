@@ -1,0 +1,16 @@
+Jane Smith
+Junior Frontend Developer
+Email: jane.smith@example.com
+Phone: 9876543210
+
+Summary:
+Motivated Junior Developer with 2 years of experience. Passionate about UI/UX and React development.
+
+Skills:
+React, Javascript, HTML, CSS, Git
+
+Experience:
+- Frontend Intern at StartUp Inc (2022 - 2024): 2 years
+
+Education:
+Bachelor of Technology (B.Tech) in IT
